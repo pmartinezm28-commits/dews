@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertar Tarea</title>
+</head>
+<body>
+    <h1>Formulario de Tareas</h1>
+    <form action="?controlador=controlador_tarea&metodo=insertar" method="post">
+        
+        <label >Titulo:</label><br>
+        <input type="text" id="titulo" name="titulo" required><br><br>
+
+        <label >Prioridad:</label><br>
+        <input type="text" id="prioridad" name="prioridad" required><br><br>
+
+        <label >Fecha:</label><br>
+        <input type="date" id="fecha" name="fecha" required><br><br>
+        
+        <input type="submit" value="Insertar">
+    </form>
+</body>
+</html>

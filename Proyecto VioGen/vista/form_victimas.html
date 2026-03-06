@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="autor" content="Pablo Martínez Masero">
+    <title>Formulario Víctimas</title>
+
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <h1>Formulario Víctima</h1>
+    
+        <!-- Busqueda de victima sobre el csv -->
+    <form action="../vista/form_incidente.php" method="post">
+        
+        <br/><br/><br/>
+        
+        <div>
+            <label for="nombre_victima">Nombre:</label>
+            <input type="text" name="nombre_victima" id="nombre_victima" required>
+        </div>
+        <br/><br/>
+        <div>
+            <label for="apellido1_victima">Apellido1:</label>
+            <input type="text" name="apellido1_victima" id="apellido1_victima" required>
+        </div>
+        <br/><br/>
+        <div>
+            <label for="apellido2_victima">Apellido2:</label>
+            <input type="text" name="apellido2_victima" id="apellido2_victima" required>
+        </div>
+        <br/><br/>
+        <div>
+            <label for="edad_victima">Edad:</label>
+            <input type="text" name="edad_victima" id="edad_victima" required>
+        </div>
+        <br/><br/>
+        <div>
+            <label for="telefono_victima">Telefono:</label>
+            <input type="text" name="telefono_victima" id="telefono_victima" required>
+        </div>
+        <br/><br/>
+        <div>
+            <label for="calle_victima">Calle:</label>
+            <input type="text" name="calle_victima" id="calle_victima"required>
+            <label for="numero_direccion_victima">Nº:</label>
+            <input type="text" name="numero_direccion_victima" id="numero_direccion_victima" required>
+        </div>
+        <br/><br/>
+
+        <label for="documento_victima">Documento de identidad:</label>
+        <input type="text" name="documento_victima" id="documento_victima"required>
+
+
+        </div>
+        <br/><br/>
+        <input type="submit" value="Enviar">
+
+    </form>
+    
+</body>
+</html>

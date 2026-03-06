@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea</title>
+</head>
+<body>
+    <h1>Hola esto es un menú</h1>
+    <a href="?controlador=controlador_tarea&metodo=verInsertar">Ir a Insertar</a> <br> <br>
+    
+    <a href="?controlador=controlador_tarea&metodo=Listar">Ir a Listar</a>
+
+    <?php if(isset($mensaje)){
+        echo "<p>". $mensaje ."</p>";
+    }
+    ?>
+</body>
+</html>

@@ -1,0 +1,3 @@
+
+
+http://localhost/dews/prueba_mvc/index.php?controlador=ControladorCalificacion&metodo=verRegistrar

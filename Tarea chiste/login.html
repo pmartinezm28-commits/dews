@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiste</title>
+</head>
+<body>
+    
+<form action="chiste.php" method="get">
+   <label>Nombre :</label>
+   <input name="nombre" id="nombre" type="text"  /> <br/>
+
+   <label for="ciudad">Ciudad:</label>
+   <select id="ciudad" name="ciudad">
+       <option value="">Selecciona una ciudad</option>
+       <option value="BD">Badajoz</option>
+       <option value="BC">Barcelona</option>
+       <option value="MD">Madrid</option>
+       <option value="VL">Valencia</option>
+   </select> <br/>
+
+   <label>Mascotas:</label>
+    <div>
+        <input type="radio" id="perro" name="mascota" value="M">
+        <label for="perro" style="display: inline; margin-right: 15px;">Perro</label><br/>
+        
+        <input type="radio" id="gato" name="mascota" value="F">
+        <label for="mascota" style="display: inline; margin-right: 15px;">Gato</label><br/>
+        
+        <input type="radio" id="pajaro" name="mascota" value="O">
+        <label for="mascota" style="display: inline;">Pajaro</label><br/>
+        
+        <input type="radio" id="otro" name="mascota" value="O">
+        <label for="otro" style="display: inline;">Otro</label><br/>
+    </div>
+   
+
+   <button type="submit">Enviar</button>
+</form>    
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de autores</title>
+</head>
+<body>
+    <h1>Listado de autores</h1>
+
+    <?php if($mensaje){
+        echo "<p>$mensaje</p>";
+        }
+    ?>
+
+    <h3> <a href="?controlador=controladorAutor$metodo=verAlta">Añadir Autor</a> </h3>
+
+    <?php
+        
+        foreach($this->autores as $autor){
+            echo $this->verDiv($autor);
+        }
+
+    ?>
+    
+</body>
+</html>

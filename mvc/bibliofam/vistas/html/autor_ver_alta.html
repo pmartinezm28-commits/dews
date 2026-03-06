@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiblioFam</title>
+</head>
+<body>
+    <h2>Alta autor</h2>
+
+    <?php if ($mensaje)
+        echo "<p> $mensaje <p/>"; ?>
+
+    <fieldset>
+        <legend>Formulario Alta Autor</legend>
+        <form action="?controlador=controladorAutor&metodo=alta" method="post">
+            <!-- Campo para el Nombre Completo (Texto) -->
+            <label for="nombre">Nombre Completo:</label><br>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+
+            <!-- Campo para la Fecha de Nacimiento (Fecha) -->
+            <label for="fecha_nacimiento">Fecha de Nacimiento:</label><br>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br><br>
+
+            <!-- Campo para la Fecha de Muerte (Fecha, puede estar vacío) -->
+            <label for="fecha_muerte">Fecha de Muerte (opcional):</label><br>
+            <input type="date" id="fecha_muerte" name="fecha_muerte"><br><br>
+
+            <!-- Campo para la Nacionalidad (Enumerado/Menú desplegable) -->
+            <label for="nacionalidad">Nacionalidad:</label><br>
+            <select id="nacionalidad" name="nacionalidad" required>
+                <option value="">-- Seleccione una opción --</option>
+                <option value="Española">Española</option>
+                <option value="Francesa">Francesa</option>
+                <option value="Japonesa">Japonesa</option>
+            </select><br><br>
+
+            <!-- Botón para enviar el formulario -->
+            <input type="submit" value="Dar Alta">
+        </form>
+    </fieldset>
+</body>
+</html>
