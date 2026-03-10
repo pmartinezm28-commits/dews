@@ -20,14 +20,14 @@
         public function insertar($sql, $parametros){
             $sentencia = $this->conexion->prepare($sql);
 
-            $sentencia -> execute ($parametros);
+            $sentencia -> execute($parametros);
         }
 
         // Busca en la base de datos la query proporcionada
         public function buscar($sql, $parametros){
             $sentencia = $this->conexion->prepare($sql);
 
-            $sentencia -> execute ($parametros);
+            $sentencia -> execute($parametros);
 
             $tuplas = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
@@ -38,17 +38,24 @@
             
             $sentencia = $this->conexion->prepare($sql);
 
-            $sentencia -> execute ($parametros);
+            $sentencia -> execute($parametros);
         }
 
         public function seleccionar($sql, $parametros){
             
             $sentencia = $this->conexion->prepare($sql);
 
-            $sentencia -> execute ($parametros);
+            $sentencia -> execute($parametros);
 
             $tupla = $sentencia->fetch(PDO::FETCH_ASSOC);
 
             return $tupla;
+        }
+
+        public function modificar($sql, $parametros){
+            
+            $sentencia = $this->conexion->prepare($sql);
+        
+            $sentencia -> execute($parametros);
         }
     } 

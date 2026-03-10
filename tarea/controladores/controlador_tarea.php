@@ -140,7 +140,7 @@
                     echo'titulo no valido';
                     die();
                 }
-                // Es un número
+                // Es un númer;o
                 if(!is_numeric(htmlspecialchars($prioridad))){
                     echo'Prioridad no valida';
                     die();
@@ -157,7 +157,11 @@
                     echo'Fecha anterior';
                     die();
                 }
-                print_r($_POST);
+            require_once($this->config['dir_modelos'].'tarea.php');    
+            Tarea::modificar($id, $titulo, $prioridad, $fecha);
+
+            $mensaje = "La modificación se ha realizado correctamente";
+            $this->listar($mensaje);
 
             }catch(Throwable $e){
                 header('HTTP/2 500 Internal Server Error');

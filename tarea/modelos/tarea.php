@@ -75,6 +75,7 @@
             }
         }
 
+        // Devuelve los campos de la tarea que vamos a modificar
         public static function verModificar($id){
             try{
                 $sql = "SELECT tarea.titulo, tarea.prioridad, tarea.fecha
@@ -87,17 +88,22 @@
                 
             }catch(Throwable $e){
                 header("HTTP/2 500 Internal Server Error");
-                echo "Error: Modifcar en modelo/tarea.php en borrar. Error: ".$e. "<br>";
+                echo "Error: Modifcar en modelo/tarea.php en verModificar. Error: ".$e. "<br>";
             }
         }
 
         // Meter por parametros la tarea para poder modificar todos los campos
-        public static function modificar(){
+        public static function modificar($id, $titulo, $prioridad, $fecha){
             try{
                 $sql = "UPDATE tarea
-                        SET tarea.titulo = ";
+                        SET titulo = ?, prioridad = ?, fecha = ? 
+                        WHERE tarea.id = $id"; 
+                $parametros = [$titulo, $prioridad, $fecha];                        
+                $bd = new BD();
+                $tarea = $bd -> modificar($sql, $parametros);
             }catch(Throwable $e){
-
+                header("HTTP/2 500 Internal Server Error");
+                echo "Error: Modifcar en modelo/tarea.php en modificar. Error: ".$e. "<br>";
             }
         }
     }
