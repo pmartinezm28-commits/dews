@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Tareas</title>
+</head>
+<body>
+    <h2>Lista de Personajes</h2>
+
+    <?php 
+
+        foreach($this->personajes as $personaje){
+           echo $this->listarDiv($personaje);     
+        }
+
+    ?>
+
+    <a href="?controlador=controlador_principal&metodo=verMenuPpal">Ir al menú</a>
+
+    <?php if(isset($mensaje)){
+        echo "<p>". $mensaje ."</p>";
+    }
+    ?>
+    
+</body>
+</html>
