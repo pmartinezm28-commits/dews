@@ -15,6 +15,15 @@
             $this->puntos_vida = $puntos_vida;
         }
 
+        public function getId() {
+            return $this->id;
+        }
+
+        public function __toString()
+        {
+            return $this->id . " Nombre: " . $this->nombre . ", Nivel: " . $this->nivel . ", Puntos de vida: " . $this->puntos_vida;
+        }
+
          public static function listar(){
             try{
                 $sql = "SELECT personaje.id, personaje.nombre, personaje.nivel, personaje.puntos_vida

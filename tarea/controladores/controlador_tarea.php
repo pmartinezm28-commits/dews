@@ -77,7 +77,6 @@
                 }
                 die();
             }
-
         }
 
         public function listar ($mensaje = null){

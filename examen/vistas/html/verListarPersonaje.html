@@ -8,14 +8,15 @@
 <body>
     <h2>Lista de Personajes</h2>
 
-    <?php 
-
+    <?php  
+        echo count($this->personajes);
         foreach($this->personajes as $personaje){
-           echo $this->listarDiv($personaje);     
+           echo $this->listarDiv($personaje);
+           
         }
 
     ?>
-
+    
     <a href="?controlador=controlador_principal&metodo=verMenuPpal">Ir al menú</a>
 
     <?php if(isset($mensaje)){

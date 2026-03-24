@@ -31,7 +31,6 @@
             return $this->id; 
         }
 
-
         public function insertar(){
             try{
                 $sql = "INSERT INTO Personaje (nombre, nivel, puntos_vida) VALUES (?,?,?)";
