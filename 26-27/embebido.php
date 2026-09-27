@@ -44,6 +44,7 @@ foreach ($cursos as $id => $curso) {
     $ingresosPotenciales = $ingresosPotenciales + ($precioConDescuento * $curso['plazas']);
 }
 
+// Calcula el estado en el que se encuentra el curso
 function mostarEstado ($plazas, $matriculados){
     $libres = $plazas - $matriculados;
     $cadena = "";
@@ -55,6 +56,31 @@ function mostarEstado ($plazas, $matriculados){
         $cadena = '<span class="disponible">Disponible</span>';
     }
     return $cadena;
+}
+
+// Calcula el precio final del curso total con el descuento correspondiente y lo añade al lado para visualizarlo
+function precioFinal($categorias, $precio, $categoria){
+    $descuento = 0;
+    $precioFinal = "";
+    foreach ($categorias as $cat) {
+        if ($cat[0] == $categoria) {
+            $descuento = $cat[2];
+        }
+    }
+    $precioFinal = $precio - ($precio * $descuento);
+    $precioFinal= number_format($precioFinal, 2, ',', '.') . ' €';
+    if ($descuento > 0) {
+        $precioFinal .= ' <small>(-' . ($descuento * 100) . '%)</small>';
+    }
+    return $precioFinal;
+}
+// Devuelve el catalogo de todas las categorías
+function catalogoCategorias($categorias){
+    $nombresCategorias = [];
+    foreach ($categorias as $cat) {
+        $nombresCategorias[] = $cat[0];
+    }
+    return implode(' · ', $nombresCategorias);
 }
 
 ?>
@@ -79,10 +105,7 @@ function mostarEstado ($plazas, $matriculados){
     <h1>Catálogo de cursos online</h1>
 
     <p>
-        <?php
-        echo "Hay $totalCursos cursos, de los cuales $cursosDisponibles tienen plazas libres. ";
-        echo "Se ofertan $totalHoras horas en total.";
-        ?>
+        <?= "Hay $totalCursos cursos, de los cuales $cursosDisponibles tienen plazas libres. "."Se ofertan $totalHoras horas en total.";?>
     </p>
 
     <p>
@@ -119,27 +142,9 @@ function mostarEstado ($plazas, $matriculados){
                     <td><?= $curso['categoria'] ?></td>
                     <td><?= $curso['horas'] ?> h</td>
                     <td><?= number_format($curso['precio'], 2, ',', '.') ?> €</td>
-                    <td>
-                        <?= $curso['matriculados'] ?> / <?= $curso['plazas'] ?>
-                    </td>
-                    <td>
-                        <?= mostarEstado($curso['plazas'], $curso['matriculados'])?>
-                    </td>
-                    <td>
-                        <?php
-                        $descuento = 0;
-                        foreach ($categorias as $cat) {
-                            if ($cat[0] == $curso['categoria']) {
-                                $descuento = $cat[2];
-                            }
-                        }
-                        $precioFinal = $curso['precio'] - ($curso['precio'] * $descuento);
-                        echo number_format($precioFinal, 2, ',', '.') . ' €';
-                        if ($descuento > 0) {
-                            echo ' <small>(-' . ($descuento * 100) . '%)</small>';
-                        }
-                        ?>
-                    </td>
+                    <td><?= $curso['matriculados'] ?> / <?= $curso['plazas'] ?></td>
+                    <td><?= mostarEstado($curso['plazas'], $curso['matriculados'])?></td>
+                    <td><?= precioFinal($categorias, $curso['precio'], $curso['categoria']) ?></td>
                     <td>
                         <?php
                         $costeHora = $curso['precio'] / $curso['horas'];
@@ -154,22 +159,14 @@ function mostarEstado ($plazas, $matriculados){
     <p>
         Ingresos potenciales (si se llenan todas las plazas, con descuento aplicado):
         <strong>
-            <?php
-            echo number_format($ingresosPotenciales, 2, ',', '.') . ' €';
-            ?>
+            <?= number_format($ingresosPotenciales, 2, ',', '.') . ' €';?>
         </strong>
     </p>
 
     <p>
         Categorías disponibles en el catálogo:
         <strong>
-            <?php
-            $nombresCategorias = [];
-            foreach ($categorias as $cat) {
-                $nombresCategorias[] = $cat[0];
-            }
-            echo implode(' · ', $nombresCategorias);
-            ?>
+            <?= catalogoCategorias($categorias); ?>
         </strong>
     </p>
 </body>
