@@ -19,21 +19,20 @@
 </head>
 <body>
     <h1>Ejercicio 13</h1>
-    <?php foreach($frutas as $indice => $fruta):
-        $f = $fruta;    
-        $contador = 0; 
+    <?php 
+        $contador = 0;
+        foreach($frutas as $indice => $fr):
+            echo $indice . ": " . $fr . "<br>";
     ?>
-    <ul>
+    <!-- <ul>
         <li>
-            <?php  
-                if($fruta === $f){
-                    $contador ++;
-                }
-                echo $fruta . ". Total: " . $contador; 
+            <?php 
             ?>
         </li>
-    </ul>
+    </ul> -->
     <?php endforeach; ?>
+
+    <?php echo "Total de frutas: " . count($frutas) ?>
 
 </body>
 </html>	
