@@ -4,9 +4,6 @@
  Indica también el número total de frutas con count(). */
     $frutas = ["fresas", "manzana", "manzana", "naranjas", "naranjas", "peras", "platanos", "naranjas"];
     // Hacer 
-    function  contar_frutas(){
-
-    }
 
 ?>
 <!DOCTYPE html>
@@ -20,19 +17,19 @@
 <body>
     <h1>Ejercicio 13</h1>
     <?php 
-        $contador = 0;
-        foreach($frutas as $indice => $fr):
-            echo $indice . ": " . $fr . "<br>";
+        foreach($frutas as $fruta):
+            
     ?>
-    <!-- <ul>
+    <ul>
         <li>
-            <?php 
-            ?>
+            <?= $fruta; ?>
         </li>
-    </ul> -->
-    <?php endforeach; ?>
+    </ul>
+     
 
-    <?php echo "Total de frutas: " . count($frutas) ?>
+    <?php
+    endforeach;
+    echo "Total de frutas: " . count($frutas) ?>
 
 </body>
 </html>	

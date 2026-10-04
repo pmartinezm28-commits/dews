@@ -2,8 +2,8 @@
     $nombre = "Pablo";
     $edad = 26;
     $altura = 170;
-    $esAlumno = true;
-    $cadena = $esAlumno ? "true" : "false";
+    $es_alumno = true;
+    $cadena = $es_alumno ? "true" : "false";
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
         <li><?= "Nombre: " . $nombre . " de tipo " . gettype($nombre) ?> </li>
         <li><?= "Edad: " . $edad . " de tipo " . gettype($edad) ?></li>
         <li><?= "Altura: " . $altura . " de tipo " . gettype($altura) ?></li>
-        <li><?= "Alumno: " . $cadena . " de tipo " . gettype($esAlumno) ?></li>
+        <li><?= "Alumno: " . $cadena . " de tipo " . gettype($es_alumno) ?></li>
     </ul>
 
 </body>
