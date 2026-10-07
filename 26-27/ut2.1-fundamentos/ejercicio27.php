@@ -13,7 +13,7 @@ function totalizar(array $matriz): array{
     for ($i=0; $i < count($matriz); $i++) { 
         $suma_filas[$i] = 0;
         for ($j=0; $j < count($matriz[$i]); $j++) { 
-            if(gettype($matriz[$i][$j]) == "string"){
+            if(gettype($matriz[$i][$j]) != "int"){
                 throw new Exception("Todos los valores deben ser numéricos");
             }
             $suma_filas[$i] += $matriz[$i][$j];
