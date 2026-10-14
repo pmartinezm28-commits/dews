@@ -7,7 +7,7 @@
         if(!isset($usuario) || empty($usuario)){
             $datos_validos = false;
         }
-        if(!isset($contra1) || empty($contra1) || $contra1 < 8){
+        if(!isset($contra1) || empty($contra1) || strlen($contra1) < 8){
             $datos_validos = false;
         }
         if(!isset($contra2) || empty($contra2) || $contra2 === $contra1){
