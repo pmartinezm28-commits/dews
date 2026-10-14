@@ -11,8 +11,5 @@
             echo "Seleccionada: $ciudad. " . $descripciones[$ciudad];
         }
     }
-    else{
-        echo "hola";
-    }
 
     include("formulario13.html");
