@@ -10,7 +10,7 @@
         if(!isset($contra1) || empty($contra1) || strlen($contra1) < 8){
             $datos_validos = false;
         }
-        if(!isset($contra2) || empty($contra2) || $contra2 === $contra1){
+        if($contra2 !== $contra1){
             $datos_validos = false;
         }
         if($datos_validos){
