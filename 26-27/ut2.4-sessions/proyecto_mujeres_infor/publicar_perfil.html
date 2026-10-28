@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar perfil</title>
+</head>
+<body>
+    <?php if($error){
+        echo "<p>$error</p>";
+    }
+    ?>
+    <form action="publicar.php" method="post">
+        <label>Foto</label><br><br>
+        <input type="file" name="foto"><br><br>
+
+        <label>Nombre</label><br><br>
+        <input type="text" name="nombre"><br><br>
+        
+        <label>Descripcion</label><br><br>
+        <textarea name="descripcion" ></textarea><br><br>
+
+        <button name='publicar'>Publicar</button>
+    </form>
+</body>
+</html>
