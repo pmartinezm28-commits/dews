@@ -1,5 +1,6 @@
 
 <?php
+    $idiomas = "";
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         if(isset($_POST["idiomas"])){
             $idiomas = htmlspecialchars($_POST['idiomas'] ?? "es");
@@ -25,8 +26,8 @@
         <input type="text" name="idiomas" value="<?php echo $idiomas ?>" disabled><br><br>
         <select name="idiomas" id="idiomas">
             <option value="es" <?= $idiomas =='es' ? 'selected' : "" ?> >Español</option>
-            <option value="en" <?= $idiomas =='en' ? 'selected' : ''?>>Ingles</option>
-            <option value="po" <?= $idiomas =='po' ? 'selected' : ''?>>Portugues</option>
+            <option value="en" <?= $idiomas =='en' ? 'selected' : ''?>>Inglés</option>
+            <option value="po" <?= $idiomas =='po' ? 'selected' : ''?>>Portugués</option>
         </select>
         <br><br>
         <button>Enviar</button>
