@@ -1,0 +1,13 @@
+{
+    "usuarios":[
+    {
+        "usuario": "ana",
+        "clave": "$2y$10$bkf8yv7XTx3SaOxSotpTe.MS629Nnz4b1lP/adL/ybdbpvQnZyN7W"
+    }
+    ,
+    {
+
+        "usuario": "blas",
+        "clave": "$2y$10$ks7htMVfppQNzyZQFqwCFuK7VRPvOqURKXp8arRAB82EF8SGdLNqy"
+    }
+]}

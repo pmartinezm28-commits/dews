@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Inicar sesión</h1>
+   <!--  <?php if($error){
+        echo "<p>$error</p>";
+    }
+    ?> -->
+    <form action="" method="post">
+        <input type="hidden" name="csrf" value="<?= htmlspecialchars($csrf) ?>">
+
+        <label>Usuario</label><br><br>
+        <input type="text" name="usuario" value="<?= htmlspecialchars($usuarioRecordado) ?>" autofocus><br><br>
+        
+        <label>Contraseña</label><br><br>
+        <input type="password" name="clave" ></input><br><br>
+
+        <button type="submit">Entrar</button>
+    </form>
+</body>
+</html>
+</body>
+</html>
