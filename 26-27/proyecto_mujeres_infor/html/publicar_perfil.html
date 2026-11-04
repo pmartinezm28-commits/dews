@@ -10,9 +10,10 @@
         echo "<p>$error</p>";
     }
     ?>
-    <!-- Añadir CSRF -->
     <h1>Publicar Perfiles</h1>
     <form action="" method="post">
+        <input type="hidden" name="csrf" value="<?= htmlspecialchars($csrf) ?>">
+
         <label>Foto</label><br><br>
         <input type="file" name="foto"><br><br>
 
@@ -20,7 +21,7 @@
         <input type="text" name="nombre"><br><br>
         
         <label>Descripcion</label><br><br>
-        <textarea name="descripcion" rows="7" ></textarea><br><br>
+        <textarea name="descripcion" rows="7" cols="70"></textarea><br><br>
 
         <button name='publicar'>Publicar</button>
     </form>

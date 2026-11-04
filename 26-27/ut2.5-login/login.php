@@ -23,7 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     if ($error === ""){
         // Comprobar CSRF
         
-
         if($_POST['csrf'] !== $_SESSION['csrf'] ){
             header("Location: login.php");
             die();
